@@ -90,7 +90,7 @@ ENV/
 
 # JSON
 # so API keys are not committed
-.json
+*.json
 
 # binaries
-.mp3
+*.mp3
