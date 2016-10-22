@@ -1,22 +1,12 @@
 import requests
 
-headers = {
-    'Content-Type': 'application/json',
-}
-
-data = open('sync-request.json')
-data_str = str(data.read())
-print(data_str)
-
-api_key = open('api_key.txt')
-api_key_str = str(api_key.read())
-print(api_key_str)
-
-url = 'https://speech.googleapis.com/v1beta1/speech:syncrecognize?key=' + api_key_str
+api_key = str(open('api_key.txt').read())
+url = 'https://speech.googleapis.com/v1beta1/speech:syncrecognize?key=' + api_key
 print(url)
 
-r = requests.post(url,headers=headers, data=data, verify=False)
+json = str(open('sync-request.json').read())
+print(json)
 
-print(r)
-print(r.text)
-print(r.json())
+response = requests.post(url, data=json, json=None)
+print(response)
+print(response.text)
