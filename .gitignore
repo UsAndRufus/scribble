@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# JSON
+# so API keys are not committed
+.json
+
+# binaries
+.mp3
